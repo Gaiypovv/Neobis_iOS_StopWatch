@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Neobis_Timer_StopWatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timer" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1uB-XE-4rX">
+                                <rect key="frame" x="91" y="64.5" width="192" height="91"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="PI0-F2-0uC"/>
+                                    <constraint firstAttribute="width" constant="192" id="jkd-DF-bR3"/>
+                                </constraints>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ybV-EB-dS6">
+                                <rect key="frame" x="46" y="212" width="266" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="266" id="PwE-TN-AgK"/>
+                                    <constraint firstAttribute="height" constant="31" id="RF6-Ae-9BE"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Timer"/>
+                                    <segment title="StopWatch"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="jBV-mA-MAL"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TM-BC-rmY">
+                                <rect key="frame" x="83" y="251" width="206.5" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="206.5" id="9Vr-AL-pbr"/>
+                                    <constraint firstAttribute="height" constant="60" id="JaG-LK-A6C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="hU7-Bq-MBB">
+                                <rect key="frame" x="75" y="511" width="222" height="49.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sg-OC-JDq">
+                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="49.5"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="stop.circle.fill" catalog="system" title="">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="resetAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WTk-xx-e7i"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qr-nn-4Me">
+                                        <rect key="frame" x="88.5" y="0.0" width="58" height="49.5"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system" title="">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="startAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tpC-cQ-U0P"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhs-Ez-fKB">
+                                        <rect key="frame" x="165.5" y="0.0" width="56.5" height="49.5"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="pause.fill" catalog="system" title="">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="stopAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="46v-Xe-VxS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IfZ-zp-mMQ">
+                                <rect key="frame" x="0.0" y="326" width="375" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="Yja-Az-yIh"/>
+                                    <constraint firstAttribute="width" constant="375" id="s9D-gi-Xrm"/>
+                                </constraints>
+                            </pickerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="1uB-XE-4rX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="91" id="1Y2-Uj-bbD"/>
+                            <constraint firstItem="1uB-XE-4rX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="3ra-mr-iGR"/>
+                            <constraint firstItem="hU7-Bq-MBB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="Cbr-ep-F0l"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ybV-EB-dS6" secondAttribute="trailing" constant="63" id="HWo-FR-wlD"/>
+                            <constraint firstItem="ybV-EB-dS6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="WQI-7p-2Av"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6TM-BC-rmY" secondAttribute="trailing" constant="85.5" id="a7K-tk-rmh"/>
+                            <constraint firstItem="6TM-BC-rmY" firstAttribute="top" secondItem="ybV-EB-dS6" secondAttribute="bottom" constant="8" id="gLU-Gx-gT2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hU7-Bq-MBB" secondAttribute="bottom" constant="106.5" id="gut-Rp-oZZ"/>
+                            <constraint firstItem="6TM-BC-rmY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="83" id="hGB-nD-t6V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hU7-Bq-MBB" secondAttribute="trailing" constant="78" id="iBn-zi-cc7"/>
+                            <constraint firstItem="ybV-EB-dS6" firstAttribute="top" secondItem="1uB-XE-4rX" secondAttribute="bottom" constant="56" id="pSo-p5-WU7"/>
+                            <constraint firstItem="IfZ-zp-mMQ" firstAttribute="top" secondItem="6TM-BC-rmY" secondAttribute="bottom" constant="15" id="s93-sD-tPw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pickerView" destination="IfZ-zp-mMQ" id="Gd9-Vi-yof"/>
+                        <outlet property="resetButton" destination="3sg-OC-JDq" id="kbN-89-9vL"/>
+                        <outlet property="segmentControl" destination="ybV-EB-dS6" id="t1r-xV-v42"/>
+                        <outlet property="startButton" destination="3Qr-nn-4Me" id="V3x-xh-8UJ"/>
+                        <outlet property="stopButton" destination="Zhs-Ez-fKB" id="DXX-vL-MBK"/>
+                        <outlet property="timeLabel" destination="6TM-BC-rmY" id="3Jp-db-hox"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pause.fill" catalog="system" width="117" height="128"/>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
+        <image name="stop.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="timer" catalog="system" width="128" height="123"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
